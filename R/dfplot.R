@@ -1,14 +1,15 @@
 # generic dfplot method 
 setGeneric(name="dfplot",
-           def=function(dfdescription){standardGeneric("dfplot")})
+           def=function(dfdescription,title = NULL){standardGeneric("dfplot")})
 
 # dfplot for data.frame class. Create a data.frame.description object and then plot it
 setMethod(f="dfplot",
           signature="data.frame",
-          def = function(dfdescription){
+          def = function(dfdescription, title = NULL){
             
+            if(is.null(title)) title = as.character(as.list(match.call())$dfdescription)
             # Create a Data.frame.description object
-            object_df_description <- data.frame.description(dfdescription)
+            object_df_description <- data.frame.description(dfdescription,title )
             
             # Plot it
             return(dfplot(object_df_description))
@@ -18,7 +19,7 @@ setMethod(f="dfplot",
 # dfplot method for Data.frame.description class. Main dfplot method.
 setMethod(f="dfplot",
           signature="Data.frame.description",
-          def = function(dfdescription){
+          def = function(dfdescription,title=dfdescription@title){
             
             ### Choose good colors ###
             modalities <- c("NA", "integer",   "numeric",   "Date",         "character", "factor", "ordered",  "other")

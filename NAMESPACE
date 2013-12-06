@@ -1,1 +1,6 @@
+export("simulate_dataframe",
+       "expand_dfmatrix")
 exportMethods("dfplot")
+
+import(ggplot2)
+import(methods)

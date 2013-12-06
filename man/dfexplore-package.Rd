@@ -31,6 +31,5 @@ Testing: Maël Barthoulot
 \code{\link[=dfplot]{dfplot}}
 }
 \examples{
-data(example_df)
 dfplot(example_df)
 }

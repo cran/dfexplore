@@ -33,7 +33,6 @@ A small data set randomly generated to simulate 100 observation on a survey with
 }
 
 \examples{
-data(example_df)
 dfplot(example_df)
 }
 \keyword{datasets}

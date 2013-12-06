@@ -24,11 +24,17 @@ setMethod(f="produce_df_pour_plot",
           signature="data.frame",
           def=function(source_data_frame){
             
+            # Check if there is matrix inside and if true, transform to standard
+            matrix_position <- search_matrix_position(source_data_frame)
+            if(length(matrix_position) > 0){
+              source_data_frame <- expand_dfmatrix( dataframe=source_data_frame, matrix_position)
+            }
             # Function to name to an human understandable way classes of data
             class_detect <- function(vector_tested,tested_list){
               #find the internal class of the vector. Keep only the first class.
               vector_class <- class(vector_tested)[1]
               
+              # TODO : if the class is a matrix, then extend it with nameofmatrix.nameofvar
               
               #select if in tested list
               if(vector_class %in% tested_list){
@@ -101,10 +107,9 @@ setMethod(f="initialize",
 #new(Class="Data.frame.description",cars)
 
 # Constructeur
-data.frame.description <- function(data_frame_source){
-  #Constructeur de la classe Data.frame.description
-  name <- as.character(as.list(match.call())$data_frame_source)
-  new(Class="Data.frame.description",data_frame_source,name)
+data.frame.description <- function(data_frame_source,data_frame_name = as.character(as.list(match.call())$data_frame_source)){
+  #Constructeur de la classe Data.frame.description 
+  new(Class="Data.frame.description",data_frame_source,data_frame_name)
 }
 
 # Methode plot pour data.frame.description
