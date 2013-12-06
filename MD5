@@ -1,0 +1,9 @@
+679a7c98211ff88377ad7b5429d91bc2 *DESCRIPTION
+3ba02e01468bed1752a5d1940404e12e *NAMESPACE
+3c6298af716c45a9599215f96597ea6e *R/data.frame.description.R
+f1f812740da24668ff73841ed72300e7 *R/dfplot.R
+1a9cbcdd4826ac0607902c8f1a9452b9 *data/example_df.RData
+ea0d8a393c03713d7c574c0cff8f7925 *man/dfexplore-package.Rd
+dc6b706a9552f16cf4382030441f8971 *man/dfplot.Rd
+e3e4cf425a7f429dca62b891086dba64 *man/example_df.Rd
+a4328da04edcc25665364aa00b292877 *tests/test_dfplot.R
